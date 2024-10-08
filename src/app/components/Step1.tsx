@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useFormContext } from "../context/useFormContext";
+import ButtonStep from "../UI/ButtonStep";
 
 const Step1 = ({ nextStep }: { nextStep: () => void }) => {
   const { formData, setFormData } = useFormContext();
@@ -69,12 +70,8 @@ const Step1 = ({ nextStep }: { nextStep: () => void }) => {
           <p className="text-red-500 text-sm">{errors.description}</p>
         )}
       </div>
-      <button
-        onClick={handleNextStep} // Llamar a la función de validación
-        className="mt-4 p-2 bg-sky-700 text-white rounded font-bold"
-      >
-        Next
-      </button>
+
+      <ButtonStep onClick={handleNextStep} label="Next" isNext={true} />
     </div>
   );
 };

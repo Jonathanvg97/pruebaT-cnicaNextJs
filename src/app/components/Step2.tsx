@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFormContext } from "../context/useFormContext";
 import useFetchCategories from "../hooks/useFetchCategories";
+import ButtonStep from "../UI/ButtonStep";
 
 const Step2 = ({
   nextStep,
@@ -132,18 +133,8 @@ const Step2 = ({
       </div>
 
       <div className="flex justify-between">
-        <button
-          onClick={prevStep}
-          className="mt-4 p-2 bg-gray-500 text-white rounded font-bold"
-        >
-          Back
-        </button>
-        <button
-          onClick={handleNextStep} // Llamar a la función de validación
-          className="mt-4 p-2 bg-sky-700 text-white rounded font-bold"
-        >
-          Next
-        </button>
+        <ButtonStep onClick={prevStep} label="Back" />
+        <ButtonStep onClick={handleNextStep} label="Next" isNext={true} />
       </div>
     </div>
   );

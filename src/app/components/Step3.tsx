@@ -2,7 +2,8 @@
 import { useFormContext } from "../context/useFormContext";
 import useSubmitProduct from "../hooks/useSubmitProduct";
 import { useRouter } from "next/navigation";
-import Modal from "./Modal";
+import Modal from "../UI/Modal";
+import ButtonStep from "../UI/ButtonStep";
 
 const Step3 = ({
   prevStep,
@@ -61,12 +62,8 @@ const Step3 = ({
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="flex justify-between">
-        <button
-          onClick={prevStep}
-          className="mt-4 p-2 bg-gray-500 text-white rounded"
-        >
-          Back
-        </button>
+        <ButtonStep onClick={prevStep} label="Back" />
+
         <button
           onClick={handleSubmit}
           className={`mt-4 p-2 ${
