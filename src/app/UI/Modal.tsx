@@ -2,6 +2,15 @@
 import React from "react";
 import { ModalProps } from "../interfaces/modalInterface";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @param {{ isOpen: any; onClose: any; message: any; }} param0
+ * @param {${2:*}} param0.isOpen
+ * @param {${3:*}} param0.onClose
+ * @param {${4:*}} param0.message
+ * @returns {${5:*}\}
+ */
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, message }) => {
   if (!isOpen) return null;
 

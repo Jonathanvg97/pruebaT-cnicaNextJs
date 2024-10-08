@@ -5,6 +5,17 @@ import { useRouter } from "next/navigation";
 import Modal from "../UI/Modal";
 import ButtonStep from "../UI/ButtonStep";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @param {{
+ *   prevStep: () => void;
+ *   resetForm: () => void;
+ * }} param0
+ * @param {() => void} param0.prevStep
+ * @param {() => void} param0.resetForm
+ * @returns {void; resetForm: () => void; \}) => any\}
+ */
 const Step3 = ({
   prevStep,
   resetForm,

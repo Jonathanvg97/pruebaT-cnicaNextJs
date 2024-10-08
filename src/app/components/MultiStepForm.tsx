@@ -7,6 +7,11 @@ import Step2 from "./Step2";
 import Step3 from "./Step3";
 import { useFormContext } from "../context/useFormContext";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @returns {${2:*}}
+ */
 const MultiStepForm = () => {
   //hooks
   const { resetForm } = useFormContext();

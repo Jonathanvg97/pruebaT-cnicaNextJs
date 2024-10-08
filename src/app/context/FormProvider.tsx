@@ -4,6 +4,13 @@ import { FormContext, defaultFormData } from "./FormContext";
 import { FormData } from "../interfaces/FormInterfaces";
 
 // Proveedor del contexto
+/**
+ * ${1:Description placeholder}
+ *
+ * @param {{ children: ReactNode }} param0
+ * @param {ReactNode} param0.children
+ * @returns {${2:*}\}
+ */
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   // Recuperar datos del localStorage al iniciar
   const [formData, setFormData] = useState<FormData>(() => {

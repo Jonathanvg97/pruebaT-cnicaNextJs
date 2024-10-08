@@ -3,6 +3,11 @@
 import MultiStepForm from "../components/MultiStepForm";
 import { FormProvider } from "../context/FormProvider";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @returns {${2:*}}
+ */
 const NewProductPage = () => {
   return (
     <FormProvider>

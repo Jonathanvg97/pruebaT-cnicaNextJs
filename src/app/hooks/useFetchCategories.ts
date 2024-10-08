@@ -3,6 +3,11 @@ import { Category } from "../interfaces/CategotyInterface";
 
 
 // Hook personalizado para obtener categorías
+/**
+ * ${1:Description placeholder}
+ *
+ * @returns {{ categories: any; error: any; loading: any; }\}
+ */
 const useFetchCategories = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [error, setError] = useState<string | null>(null);

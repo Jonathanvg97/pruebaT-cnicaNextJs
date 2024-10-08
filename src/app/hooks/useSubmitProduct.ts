@@ -2,6 +2,11 @@ import { useState } from "react";
 import { FormData } from "../interfaces/FormInterfaces";
 
 // Hook personalizado para enviar productos
+/**
+ * ${1:Description placeholder}
+ *
+ * @returns {{ submitProduct: (formData: FormData, onSuccess?: () => void) => unknown; loading: any; error: any; isModalOpen: any; closeModal: () => void; successMessage: any; }\}
+ */
 const useSubmitProduct = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

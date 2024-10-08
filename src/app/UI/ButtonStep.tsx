@@ -2,6 +2,15 @@
 import React from "react";
 import { ButtonStepProps } from "../interfaces/ButtonStepInterface";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @param {{ onClick: any; label: any; isNext: any; }} param0
+ * @param {${2:*}} param0.onClick
+ * @param {${3:*}} param0.label
+ * @param {${4:*}} param0.isNext
+ * @returns {${5:*}\}
+ */
 const ButtonStep: React.FC<ButtonStepProps> = ({ onClick, label, isNext }) => {
   return (
     <button

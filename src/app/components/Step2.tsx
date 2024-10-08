@@ -3,6 +3,17 @@ import { useFormContext } from "../context/useFormContext";
 import useFetchCategories from "../hooks/useFetchCategories";
 import ButtonStep from "../UI/ButtonStep";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @param {{
+ *   nextStep: () => void;
+ *   prevStep: () => void;
+ * }} param0
+ * @param {() => void} param0.nextStep
+ * @param {() => void} param0.prevStep
+ * @returns {void; prevStep: () => void; \}) => any\}
+ */
 const Step2 = ({
   nextStep,
   prevStep,

@@ -1,4 +1,10 @@
 // src/pages/Home.tsx
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @returns {${2:*}}
+ */
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-sky-100 ">

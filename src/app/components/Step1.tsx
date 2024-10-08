@@ -2,6 +2,13 @@ import { useState } from "react";
 import { useFormContext } from "../context/useFormContext";
 import ButtonStep from "../UI/ButtonStep";
 
+/**
+ * ${1:Description placeholder}
+ *
+ * @param {{ nextStep: () => void }} param0
+ * @param {() => void} param0.nextStep
+ * @returns {void; \}) => any\}
+ */
 const Step1 = ({ nextStep }: { nextStep: () => void }) => {
   const { formData, setFormData } = useFormContext();
 
