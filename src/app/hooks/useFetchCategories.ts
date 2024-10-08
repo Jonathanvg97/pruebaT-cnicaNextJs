@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 import { Category } from "../interfaces/CategotyInterface";
 
-
 // Hook personalizado para obtener categorías
 /**
- * ${1:Description placeholder}
+ * Hook para obtener las categorías desde la API.
  *
- * @returns {{ categories: any; error: any; loading: any; }\}
+ * @returns {{ categories: Category[]; error: string | null; loading: boolean; }}
  */
 const useFetchCategories = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
+  // Obtén la URL de la API de las variables de entorno
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+
   useEffect(() => {
     const fetchCategories = async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://api.escuelajs.co/api/v1/categories");
+        const response = await fetch(`${apiUrl}/categories`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const data = await response.json();
         setCategories(data);
       } catch (error) {
@@ -29,7 +34,7 @@ const useFetchCategories = () => {
     };
 
     fetchCategories();
-  }, []);
+  }, [apiUrl]);
 
   return { categories, error, loading };
 };

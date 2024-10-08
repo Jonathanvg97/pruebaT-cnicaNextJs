@@ -17,6 +17,9 @@ const useSubmitProduct = () => {
     setLoading(true);
     setError(null);
 
+    // Obtén la URL de la API de las variables de entorno
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+
     try {
       // Validar que todas las URLs de imágenes sean válidas
       const validImage = formData.images.every((img: string) =>
@@ -29,19 +32,16 @@ const useSubmitProduct = () => {
         return;
       }
 
-      const response = await fetch(
-        "https://api.escuelajs.co/api/v1/products/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...formData,
-            images: formData.images.map((img: string) => img.trim()), // Asegurarse de que las URLs estén sin espacios
-          }),
-        }
-      );
+      const response = await fetch(`${apiUrl}/products`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          images: formData.images.map((img: string) => img.trim()), // Asegurarse de que las URLs estén sin espacios
+        }),
+      });
 
       const data = await response.json();
       if (response.ok) {

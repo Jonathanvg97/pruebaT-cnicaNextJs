@@ -44,7 +44,13 @@ Sigue estos pasos para instalar y ejecutar el proyecto:
    npm install
    ```
 
-3. **Ejecutar el proyecto **:
+3. **Agregar las Varibles de entorno**:
+
+   ```bash
+   env.local
+   ```
+
+4. **Ejecutar el proyecto **:
 
    ```bash
    npm run dev
