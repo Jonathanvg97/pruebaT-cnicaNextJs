@@ -7,7 +7,7 @@ export const defaultFormData: FormData = {
   description: "",
   price: 0,
   categoryId: 0,
-  images: [],
+  images: [''],
 };
 
 // Creación del contexto

@@ -10,13 +10,18 @@ const Step1 = ({ nextStep }: { nextStep: () => void }) => {
   }>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    // Actualiza los datos del formulario
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
 
     // Limpiar el error cuando el usuario empieza a escribir
-    setErrors({ ...errors, [e.target.name]: undefined });
+    setErrors((prev) => ({
+      ...prev,
+      [name]: undefined,
+    }));
   };
 
   const handleNextStep = () => {
