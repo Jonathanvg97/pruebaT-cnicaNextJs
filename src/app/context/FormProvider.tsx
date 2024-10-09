@@ -9,24 +9,33 @@ import { FormData } from "../interfaces/FormInterfaces";
  *
  * @param {{ children: ReactNode }} param0
  * @param {ReactNode} param0.children
- * @returns {${2:*}\}
  */
 export const FormProvider = ({ children }: { children: ReactNode }) => {
-  // Recuperar datos del localStorage al iniciar
-  const [formData, setFormData] = useState<FormData>(() => {
-    const savedData = localStorage.getItem("formData");
-    return savedData ? JSON.parse(savedData) : defaultFormData;
-  });
+  const [formData, setFormData] = useState<FormData>(defaultFormData);
+
+  // Recuperar datos del localStorage al iniciar solo en el cliente
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedData = localStorage.getItem("formData");
+      if (savedData) {
+        setFormData(JSON.parse(savedData));
+      }
+    }
+  }, []);
 
   // Función para restablecer el formulario
   const resetForm = () => {
     setFormData(defaultFormData); // Restablecer al valor predeterminado
-    localStorage.removeItem("formData"); // Limpiar localStorage al resetear el formulario
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("formData"); // Limpiar localStorage al resetear el formulario
+    }
   };
 
   // Guardar los datos del formulario en localStorage cada vez que cambian
   useEffect(() => {
-    localStorage.setItem("formData", JSON.stringify(formData));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("formData", JSON.stringify(formData));
+    }
   }, [formData]);
 
   // UI
