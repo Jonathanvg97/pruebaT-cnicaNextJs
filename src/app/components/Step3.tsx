@@ -49,10 +49,10 @@ const Step3 = ({
 
   //UI
   return (
-    <div>
+    <div className="max-w-xl mx-auto">
       <h2 className="text-2xl font-semibold mb-4">Step 3: Confirm Product</h2>
 
-      <div className="mb-4">
+      <div className="mb-4 w-full">
         <p>
           <strong>Name:</strong> {formData.title}
         </p>
@@ -65,11 +65,20 @@ const Step3 = ({
         <p>
           <strong>Category ID:</strong> {formData.categoryId}
         </p>
-        <p>
-          <strong>Image URL:</strong> {formData.images[0]}
+        <p className="">
+          <strong>Image:</strong>
         </p>
       </div>
 
+      {formData.images[0] && (
+        <div className="relative w-full  ">
+          <img
+            src={formData.images[0]}
+            alt="Product Image"
+            className="rounded w-full  object-contain h-64"
+          />
+        </div>
+      )}
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="flex justify-between">
